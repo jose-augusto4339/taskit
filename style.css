@@ -1,0 +1,85 @@
+:root{
+    --primary-blue: #4169e1;
+    --primary-white: #ffffff;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Just Another Hand', cursive;
+    color: var(--primary-blue);
+}
+
+body{
+    max-width: 100%;
+    background-color: #FFFFC5;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 0.25vh solid;
+    height: 9.5vh;
+    width: 100%;
+}
+
+main{
+    display: flex;
+    height: 90vh;
+    width: 100%;
+}
+
+.column{
+    flex: 1;
+    min-height: 50%;
+    max-height: 100%;
+}
+
+.column:not(:last-child){
+    border-right: 1px solid;
+}
+
+.sketchy-border-h{
+    border-image: linear-gradient(
+        to right,
+        var(--primary-blue), 
+        var(--primary-blue), 
+        var(--primary-blue), 
+        var(--primary-white)
+        ) 1;
+}
+
+.sketchy-border-v{
+    border-image: linear-gradient(
+        to bottom,
+        var(--primary-blue), 
+        var(--primary-blue), 
+        var(--primary-blue), 
+        var(--primary-white)
+        ) 1;
+}
+
+.green-background-hover {
+    background-color: var(--green);
+}
+
+.green-background-hover:hover {
+    background-color: var(--green-001);
+}
+
+.btn{
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
+    border: var(--primary-white);
+    transition: .1s;
+    padding: 10px;
+}
+
+.btn:hover{
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
+    border:solid 3px red;
+    font-weight: bold;
+}
