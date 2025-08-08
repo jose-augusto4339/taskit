@@ -1,18 +1,26 @@
 :root{
     --primary-blue: #4169e1;
-    --primary-white: #ffffff;
+    --primary-white:  #F0E68C;
+    --primary-white-001: #FFFFC5;
+    --primary-white-002: #C0B870;
+    --primary-white-003: #625E3A;
 }
 
 *{
     margin: 0;
     padding: 0;
+    letter-spacing: 0.1rem;
     font-family: 'Just Another Hand', cursive;
     color: var(--primary-blue);
 }
 
+textarea:focus, input:focus, select:focus {
+    outline: 0;
+} 
+
 body{
     max-width: 100%;
-    background-color: #FFFFC5;
+    background-color: var(--primary-white);
 }
 
 header{
@@ -35,6 +43,12 @@ main{
     flex: 1;
     min-height: 50%;
     max-height: 100%;
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    color: red;
 }
 
 .column:not(:last-child){
@@ -61,25 +75,58 @@ main{
         ) 1;
 }
 
-.green-background-hover {
-    background-color: var(--green);
+.column_title{
+    height: 6vh;
+    width: 60%;
+    margin-top: 4vh;
+    border: none;
+    background-color: var(--primary-white-001);
+
+    font-size: 2em;
+    text-align: center;
+    text-decoration: underline;
+    text-decoration-color: red;
 }
 
-.green-background-hover:hover {
-    background-color: var(--green-001);
+.action-buttons-container{
+    position: absolute;
+    border: 1px solid red;
+    top: 0;
+    right: 0;
+}
+
+.delete-column-button{
+    width: 3vw;
+    height: 3vw;
+
+    font-weight: bolder;
+    font-size: 2em;
+    text-align: center;
+    color: var(--primary-white-003);
+
+    border: none;
+    background-color: var(--primary-white);
+
+}
+
+.delete-column-button:hover{
+    background-color: var(--primary-white-002);
 }
 
 .btn{
-    font-size: 1.5rem;
-    text-transform: uppercase;
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
     border: var(--primary-white);
-    transition: .1s;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
     padding: 10px;
+    
+    text-transform: uppercase;
+    font-size: 1.5rem;
+
+    transition: .1s;
 }
 
 .btn:hover{
-    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
     border:solid 3px red;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px; 
+
     font-weight: bold;
 }
