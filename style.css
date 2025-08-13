@@ -90,15 +90,15 @@ main{
 
 .action-buttons-container{
     position: absolute;
-    border: 1px solid red;
     top: 0;
     right: 0;
 }
 
-.delete-column-button{
+.column-button{
     width: 3vw;
     height: 3vw;
 
+    display: block;
     font-weight: bolder;
     font-size: 2em;
     text-align: center;
@@ -109,8 +109,16 @@ main{
 
 }
 
-.delete-column-button:hover{
+.column-button:hover{
     background-color: var(--primary-white-002);
+}
+
+.postit{
+    width: 80%;
+    height: 25vh;
+    background-color: pink;
+    display: block;
+    margin-top: 4vh;
 }
 
 .btn{

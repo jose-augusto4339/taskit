@@ -28,7 +28,7 @@ function createColumn(){
     column.classList.add("sketchy-border-v");
 
     column.appendChild(createColumnTitle());
-    column.appendChild(createColumnActionButtons());
+    column.appendChild(createColumnActionButtons(column));
 
     return column;
 }
@@ -43,27 +43,48 @@ function createColumnTitle(){
     return columnTitle;
 }
 
-function createColumnActionButtons(){
+function createColumnActionButtons(columnElement){
     const actionButtonsContainer = document.createElement('div');
+    
     actionButtonsContainer.classList.add("action-buttons-container");
 
-    actionButtonsContainer.appendChild(createDeleteColumnButton());
-    // actionButtonsContainer.appendChild(createAddPostItButton());
+    actionButtonsContainer.appendChild(createDeleteColumnButton(columnElement));
+    actionButtonsContainer.appendChild(createAddPostItButton(columnElement));
 
     return actionButtonsContainer;
 }
 
-function createDeleteColumnButton(){
+function createDeleteColumnButton(columnElement){
     const deleteColumnButton = document.createElement('button');
 
     deleteColumnButton.innerHTML = 'X';
-    deleteColumnButton.classList.add('delete-column-button');
+    deleteColumnButton.classList.add('column-button');
+
+    deleteColumnButton.addEventListener('click', () =>{
+        columnElement.remove();
+    })
 
     return deleteColumnButton;
 }
 
-function createAddPostItButton(){
+function createAddPostItButton(columnElement){
     const addPostItButton = document.createElement('button');
 
+    addPostItButton.innerHTML = '+';
+    addPostItButton.classList.add('column-button');
+
+    addPostItButton.addEventListener('click', () =>{
+        console.log(createPostIt());
+        columnElement.appendChild(createPostIt());
+    })
+
     return addPostItButton;
+}
+
+function createPostIt(){
+    const postIt = document.createElement('div');
+
+    postIt.classList.add('postit')
+
+    return postIt;
 }
